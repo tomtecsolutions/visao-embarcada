@@ -1,61 +1,76 @@
 
-# 👁️ Visão Computacional Aplicada à Classificação e Separação de Peças com Sistemas Embarcados
+# 📦 Visão Computacional para Identificação de Frascos com OCR
 
-Este projeto apresenta dois experimentos práticos utilizando visão computacional com sistemas embarcados para automação industrial de baixo custo. O primeiro experimento classifica cápsulas de café com base em imagens treinadas via Teachable Machine. O segundo experimento utiliza OCR com PyTesseract para identificar frascos de shampoo, condicionador e loção hidratante.
+Este repositório apresenta um sistema embarcado desenvolvido para identificar e classificar frascos de shampoo, condicionador e loção hidratante utilizando visão computacional com OCR (Reconhecimento Óptico de Caracteres). O sistema foi implementado com um Raspberry Pi 4, câmera USB, PyTesseract e integração com Arduino para automação física da separação dos frascos.
 
-## 📌 Objetivo
+---
 
-Desenvolver um sistema de classificação automática de objetos utilizando Raspberry Pi 4, câmera USB, sensores e Arduino Uno, aplicando técnicas de visão computacional acessíveis e eficazes.
+## 🎯 Objetivo
+
+Automatizar a triagem de frascos por leitura de texto nos rótulos, acionando um braço robótico para a separação adequada, utilizando um sistema de visão de baixo custo.
 
 ---
 
 ## 🧠 Tecnologias Utilizadas
 
-- Raspberry Pi 4
 - Python 3
 - OpenCV
 - PyTesseract
 - NumPy
-- TensorFlow / Keras
-- Teachable Machine (Google)
-- Arduino Uno + IDE
-- Motor DC, ponte H L298N
-- Braço robótico com servomotores
+- Arduino Uno
+- Câmera Logitech C270
 - Sensores ultrassônicos HC-SR04
+- Motor DC + Ponte H L298N
+- Braço robótico com potenciômetros
 
 ---
 
-## 🖼️ Diagramas do Sistema
+## 📁 Estrutura do Projeto
 
-### 🔌 Diagrama 1 – Comando da Esteira
+```
+📁 imagens/
+ ├── braço_levandopeça_box4_descarte.jpg
+ ├── braçocoletandofrasco.jpg
+ ├── braçorobotico.jpg
+ ├── frascos.jpg
+ ├── reconhecimentopeçadesconhecida.jpg
+ └── reconhecimentofrasco.jpg
 
-Controle da esteira com Arduino, motor DC e sensores.
+📁 src/
+ ├── Codigo_Integracao_PythonArduino_2sensores_funcionando.ino
+ ├── Atualizado_FimdeCurso.ino
+ └── arduino_integration_tesseractocr.py
 
-![Diagrama da Esteira](imagens/2025-06-25_112028.jpg)
-
----
-
-### 🧠 Diagrama 2 – Sistema de Visão Computacional
-
-Conexão entre Raspberry Pi 4 e câmera Logitech C270.
-
-![Diagrama de Visão Computacional](imagens/2025-06-25_112050.jpg)
-
----
-
-### 🤖 Diagrama 3 – Braço Robótico com Servomotores
-
-Controle dos eixos do braço com Arduino Uno.
-
-![Diagrama do Braço Robótico](imagens/2025-06-25_112107.jpg)
+README.md
+```
 
 ---
 
-## 🧪 Resultados
+## 🖼️ Diagramas e Imagens do Projeto
 
-- Reconhecimento em tempo real de cápsulas de café com mais de 90% de acurácia.
-- Classificação por OCR com palavras-chave, direcionando cada frasco para sua caixa específica.
-- Integração eficiente entre visão computacional e dispositivos físicos com comandos via serial.
+### 🛠️ Braço Robótico Coletando Frascos
+
+![Coletando frasco](imagens/braçocoletandofrasco.jpg)
+
+### 📦 Braço Robótico Real com Potenciômetros
+
+![Braço robótico](imagens/braçorobotico.jpg)
+
+### 🔍 Sistema OCR reconhecendo texto "Condicionador"
+
+![Reconhecimento OCR](imagens/reconhecimentofrasco.jpg)
+
+### 🚫 Simulação de peça desconhecida com texto "sabão"
+
+![Peça desconhecida](imagens/reconhecimentopeçadesconhecida.jpg)
+
+### ♻️ Separação automática para descarte
+
+![Descarte automático](imagens/braço_levandopeça_box4_descarte.jpg)
+
+### 🧴 Produtos utilizados no experimento
+
+![Frascos usados](imagens/frascos.jpg)
 
 ---
 
@@ -63,44 +78,34 @@ Controle dos eixos do braço com Arduino Uno.
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/tomtecsolutions/visao-embarcada.git
-cd visao-embarcada
+git clone https://github.com/seu-usuario/visao-ocr-frascos.git
+cd visao-ocr-frascos
 ```
 
 2. Instale as dependências:
 ```bash
-pip install opencv-python pytesseract numpy tensorflow
+pip install opencv-python pytesseract numpy
 ```
 
-3. Execute o script desejado:
+3. Configure o caminho do Tesseract no Windows:
+```python
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+```
+
+4. Execute o script Python:
 ```bash
-python src/classificacao_capsulas.py
-# ou
-python src/leitura_ocr_frascos.py
+python src/arduino_integration_tesseractocr.py
 ```
 
----
-
-## 📂 Estrutura do Projeto
-
-```
-📁 imagens/
-   └── 2025-06-25_112028.jpg
-   └── 2025-06-25_112050.jpg
-   └── 2025-06-25_112107.jpg
-📁 src/
-   └── classificacao_capsulas.py
-   └── leitura_ocr_frascos.py
-README.md
-```
+5. Carregue os códigos `.ino` nos respectivos Arduinos:
+- `Codigo_Integracao_PythonArduino_2sensores_funcionando.ino`: controle da esteira
+- `Atualizado_FimdeCurso.ino`: controle do braço robótico
 
 ---
 
 ## 👨‍💻 Autor
 
-**Wellington de Oliveira Dorta**  
-TCC — Faculdade SENAI  
-Orientador: Michel Chaparro
+**Eng. Wellington de Oliveira Dorta**  
 
 ---
 
