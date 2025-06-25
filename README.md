@@ -115,6 +115,10 @@ pip install opencv-python pytesseract numpy
 ```python
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 ```
+- **No Raspberry Pi (Linux):**
+```python
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+```
 
 4. Execute o script Python:
 ```bash
@@ -124,6 +128,13 @@ python src/arduino_integration_tesseractocr.py
 5. Carregue os códigos `.ino` nos respectivos Arduinos:
 - `Codigo_Integracao_PythonArduino_2sensores_funcionando.ino`: controle da esteira
 - `Atualizado_FimdeCurso.ino`: controle do braço robótico
+
+ps: Para o controle do Braço robótico é necessário a instalaçaõ da biblioteca "VarSpeedServo.h"
+
+Para o mapeamento do braço robótico, foi realizado manualmente por meio de potenciometros simples de 10k usando capacitores cerâmios de 100nF entre GND e Sinal para reduzir os ruídos.
+Caso queria seguir o exemplo, carregue o código abaixo, abra o monitores serial, e ao ir mexendo os potênciometros vai atualizando as posições no monitor serial, basta ir anotando em um bloco de notas as posições desejadas e depois copiar no código principal do controle automático.
+
+- `Projeto_Pot_Manual_Atualizado_funcionando.ino`: mapeamento manual do braço com potenciometros
 
 ---
 
