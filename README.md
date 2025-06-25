@@ -63,7 +63,7 @@ Controle dos eixos do braço com Arduino Uno.
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/visao-embarcada.git
+git clone https://github.com/tomtecsolutions/visao-embarcada.git
 cd visao-embarcada
 ```
 
