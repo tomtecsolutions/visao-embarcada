@@ -43,6 +43,7 @@ Automatizar a triagem de frascos por leitura de texto nos rótulos, acionando um
  ├── Codigo_Integracao_PythonArduino_2sensores_funcionando.ino
  ├── Atualizado_FimdeCurso.ino
  └── arduino_integration_tesseractocr.py
+ └── Projeto_Pot_Manual_Atualizado_funcionando.ino
 
 README.md
 ```
