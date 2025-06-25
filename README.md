@@ -34,7 +34,10 @@ Automatizar a triagem de frascos por leitura de texto nos rótulos, acionando um
  ├── braçorobotico.jpg
  ├── frascos.jpg
  ├── reconhecimentopeçadesconhecida.jpg
- └── reconhecimentofrasco.jpg
+ ├── reconhecimentofrasco.jpg
+ ├── 2025-06-25_112028.jpg
+ ├── 2025-06-25_112050.jpg
+ └── 2025-06-25_112107.jpg
 
 📁 src/
  ├── Codigo_Integracao_PythonArduino_2sensores_funcionando.ino
@@ -46,31 +49,52 @@ README.md
 
 ---
 
-## 🖼️ Diagramas e Imagens do Projeto
+## 🖼️ Diagramas do Sistema
 
-### 🛠️ Braço Robótico Coletando Frascos
+### 🛠️ Comando da Esteira
 
-![Coletando frasco](imagens/braçocoletandofrasco.jpg)
+![Comando Esteira](imagens/2025-06-25_112028.jpg)
 
-### 📦 Braço Robótico Real com Potenciômetros
+### 🎯 Sistema de Visão Computacional
 
-![Braço robótico](imagens/braçorobotico.jpg)
+![Visão Computacional](imagens/2025-06-25_112050.jpg)
 
-### 🔍 Sistema OCR reconhecendo texto "Condicionador"
+### 🤖 Controle do Braço Robótico
+
+![Controle Robótico](imagens/2025-06-25_112107.jpg)
+
+---
+
+## 📸 Imagens Reais do Projeto
+
+
+
+### 🤖 Braço Robótico Montado
+
+![Braço montado](imagens/braçorobotico.jpg)
+
+### 🧴 Frascos utilizados no experimento
+
+![Frascos](imagens/frascos.jpg)
+
+### 📷 OCR Reconhecendo o texto no rótulo
 
 ![Reconhecimento OCR](imagens/reconhecimentofrasco.jpg)
 
-### 🚫 Simulação de peça desconhecida com texto "sabão"
+### 🧪 Coleta e separação de frascos
+
+Coletando Frasco Para levar a caixa de destino.
+
+![Coletando frasco](imagens/braçocoletandofrasco.jpg)
+
+
+### 🚫 Peça com etiqueta simulando erro (“sabão”)
 
 ![Peça desconhecida](imagens/reconhecimentopeçadesconhecida.jpg)
 
-### ♻️ Separação automática para descarte
+Levando a peça para a posição de descarte, foi configurado como box4 no código.
 
-![Descarte automático](imagens/braço_levandopeça_box4_descarte.jpg)
-
-### 🧴 Produtos utilizados no experimento
-
-![Frascos usados](imagens/frascos.jpg)
+![Separação na caixa de descarte](imagens/braço_levandopeça_box4_descarte.jpg)
 
 ---
 
@@ -78,8 +102,8 @@ README.md
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/visao-ocr-frascos.git
-cd visao-ocr-frascos
+git clone https://github.com/tomtecsolutions/visao-embarcada.git
+cd visao-embarcada
 ```
 
 2. Instale as dependências:
@@ -106,6 +130,7 @@ python src/arduino_integration_tesseractocr.py
 ## 👨‍💻 Autor
 
 **Eng. Wellington de Oliveira Dorta**  
+
 
 ---
 
